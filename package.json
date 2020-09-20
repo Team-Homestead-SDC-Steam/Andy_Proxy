@@ -8,6 +8,7 @@
     "serve": "nodemon server/index.js",
     "client:dev": "webpack-dev-server --mode development",
     "start": "node server/index.js",
+    "cluster": "node server/cluster.js",
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json public"
@@ -23,8 +24,11 @@
   },
   "homepage": "https://github.com/FEC-Bell/christina-proxy#readme",
   "dependencies": {
+    "cluster": "^0.7.7",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "newrelic": "^6.13.0",
+    "os": "^0.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
