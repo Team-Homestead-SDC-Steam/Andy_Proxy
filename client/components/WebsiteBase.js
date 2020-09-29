@@ -45,6 +45,7 @@ const WebsiteBase = () => {
       })
       .catch(e => {
         console.error(e);
+        console.log("fetchgametitleerror")
         setGameTitle('Untitled Steam Game');
       })
   }, []);

@@ -1,0 +1,35 @@
+config:
+  target: "http://localhost:3000"
+  http: 
+    timeout: 10 # Responses have to be sent within 10 seconds or the request will be aborted
+
+  phases:
+    - duration: 60
+      arrivalRate: 1
+      rampTo: 10
+      name: "1 to 10"
+    - duration: 120
+      arrivalRate: 10
+      rampTo: 100
+      name: "10 to 100"
+    - duration: 180
+      arrivalRate: 100
+      rampTo: 10000
+      name: "100 to 1000"
+
+  variables:
+    gameids:
+      - "1"
+      - "10"
+      - "100"
+      - "1000"
+      - "10000"
+      - "100000"
+      - "1000000"
+      - "10000000"
+
+scenarios:
+  - name: "Stres Test index.html"
+    flow:
+      - get:
+          url: "/app/{{gameids}}"
