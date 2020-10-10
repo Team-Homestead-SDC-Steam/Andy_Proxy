@@ -47,7 +47,7 @@ app.use('/', expressStaticGzip(path.resolve(__dirname, '..', 'public')));
 const gameDesc = express.Router();
 app.use('/api/description', gameDesc);
 gameDesc.get('/:gameid', (req, res) => {
-  
+    console.log('getting id');
   let { gameid } = req.params;
 
   console.log(gameid);
