@@ -114,3 +114,5 @@ dist
 #txt
 stresstestafter.txt
 stresstestbefore.txt
+
+newrelic.js
